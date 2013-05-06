@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="css/normalize.css" type="text/css" rel="stylesheet">
+        <link href="css/stickyNav.css" type="text/css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+        <script src="js/stickyNav.js"></script>
+        <script type="text/javascript">
+		$.noConflict(); 
+		// #noConflict - If you work in a variety of content management systems it's a good idea to call a noConflict. If you work purely in jQuery, you likely don't need to, but it's still good idea.
+
+		// Now create an instance of the plugin
+		jQuery(document).ready(function ($) {
+		    // #noConflict - Code that uses jQuery's $ can follow here.
+		    
+		    // Example #1 - Main Menu
+		    $('#main').stickyNav();
+		    // Example #2 - Secondary Menu
+		    $('#secondary').stickyNav({'startOffset': 64}); // Get stuck before disappearing behind #main
+		    // Example #3 - Back to Top
+		    $('#back-to-top').stickyNav({'offsetElement': $('#secondary')}); // Get stuck when #secondary reaches top
+		});
+		// #noConflict - Code that uses other library's $ can follow here.
+		
+		</script>
+        <title>Sticky Navigation jQuery Plugin - Example</title>
+    </head>
+    <body>
+		<header id="#top">
+			<h1>Sticky Navigation jQuery Plugin</h1>
+			<p>This plugin allows for multiple elements to become fixed in place based on the</p>
+			<nav id="main">
+			    <ul>
+			        <h3>Main Menu</h3>
+			        <li><a href="#">One</a></li>
+			        <li><a href="#">Two</a></li>
+			        <li><a href="#">Three</a></li>
+			        <li><a href="#">Four</a></li>
+			        <li><a href="#">Five</a></li>
+			        <li><a href="#">Six</a></li>
+			    </ul>
+			</nav>
+			<br>
+			<br>
+			<br>
+			<p>You can also make modifications to adjust how far from the top the change will take place.</p>
+			<nav id="secondary">
+			    <ul>
+			        <h3>Secondary Menu</h3>
+			        <li><a href="#">One</a></li>
+			        <li><a href="#">Two</a></li>
+			        <li><a href="#">Three</a></li>
+			        <li><a href="#">Four</a></li>
+			        <li><a href="#">Five</a></li>
+			        <li><a href="#">Six</a></li>
+			    </ul>
+			</nav>
+		</header>
+		<div id="back-to-top"><a href="#top">Back to Top</a></div>
+    </body>
+</html>
